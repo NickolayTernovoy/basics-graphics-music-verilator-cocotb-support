@@ -38,7 +38,7 @@ verilator --version
 Verilator установлен корректно, можно переходить к следуюшему шагу.
 
 
-2. Для использования в качестве симулятора Veriltor пропишите `define VERILATOR labs/common/config.svh
+2. Для использования в качестве симулятора Veriltor пропишите `define VERILATOR в файле labs/common/config.svh
 
 3. Для примера рассмотрим лабораторную работу labs/02_mux/
 Перейдите в папку labs/02_mux/. Кроме bash скриптов для Verilator подготовлен Makefile.
