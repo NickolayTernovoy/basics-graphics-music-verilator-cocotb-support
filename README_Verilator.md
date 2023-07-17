@@ -6,6 +6,8 @@
 ```
 # Установите необходимые зависимости и инструменты
 # Prerequisites:
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install git help2man perl python3 make autoconf g++ flex bison ccache
 sudo apt-get install libgoogle-perftools-dev numactl perl-doc
 sudo apt-get install libfl2  # Ubuntu only (ignore if gives error)
