@@ -1,3 +1,4 @@
+
 Руководство по симуляции лабораторных заданий средствами [Verialtor](https://www.veripool.org/verilator/)
 
 1. Установка Verilaror. Инструкция подходит для Debian/Ubuntu, [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). Выполните перечисленные ниже шаги
