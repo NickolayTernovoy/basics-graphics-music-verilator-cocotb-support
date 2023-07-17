@@ -42,7 +42,10 @@ module tb;
         `ifdef __ICARUS__
             $dumpvars;
         `endif
-
+        `ifdef __VERILATOR__
+            $dumpfile("testbench.vcd");
+            $dumpvars(0, tb);
+        `endif
         repeat (8)
         begin
              # 10
