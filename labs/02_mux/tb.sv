@@ -42,11 +42,10 @@ module tb;
         `ifdef __ICARUS__
             $dumpvars;
         `endif
-        `ifdef __VERILATOR__
-            $dumpfile("testbench.vcd");
+        `ifdef VERILATOR
+            $dumpfile("tb_verialtor.vcd");
             $dumpvars(0, tb);
         `endif
-        repeat (8)
         begin
              # 10
              key <= $urandom ();
