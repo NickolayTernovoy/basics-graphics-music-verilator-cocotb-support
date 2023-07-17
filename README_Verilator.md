@@ -1,7 +1,7 @@
 
 Руководство по симуляции лабораторных заданий средствами [Verialtor](https://www.veripool.org/verilator/)
 
-1. Установка Verilaror. Инструкция подходит для Debian/Ubuntu, [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). Выполните перечисленные ниже шаги
+1. Установка Verilator. Инструкция подходит для Debian/Ubuntu, [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). Выполните перечисленные ниже шаги
 
 ```
 # Установите необходимые зависимости и инструменты
@@ -23,7 +23,7 @@ cd verilator
 git pull         # Make sure git repository is up-to-date
 git tag          # See what versions exist
 git checkout v5.012  # Switch to specified release version
-# To use Verilator as a simulator to compile testbenches written in SV, need version > 5.0
+# To use Verilator as a simulator to compile testbenches written in System Verilog, need version > 5.0
 autoconf         # Create ./configure script
 ./configure      # Configure and create Makefile
 make -j `nproc`  # Build Verilator itself (if error, try just 'make')
@@ -35,7 +35,7 @@ sudo make install
 verilator --version
 # Результат должен быть подобным: Verilator 5.012 2023-06-13 rev v5.012
 ```
-Verilator установлен корректно, можно переходить к следуюшему шагу.
+Verilator установлен корректно, можно переходить к следующему шагу.
 
 
 2. Для использования в качестве симулятора Veriltor пропишите `define VERILATOR в файле labs/common/config.svh
@@ -52,7 +52,7 @@ Verilator установлен корректно, можно переходит
 make build
 make sim
 ```
-После окончания симуляции появится файл tb_verialtor.vcd, котрорый можно октрыть, например, при помощи [gtkwave](https://gtkwave.sourceforge.net/).
+После окончания симуляции появится файл tb_verialtor.vcd, котрорый можно открыть, например, при помощи [gtkwave](https://gtkwave.sourceforge.net/).
 При завершении работы можно выполнить команду make clean, чтобы удалить временные файлы.
 ```
 make clean
