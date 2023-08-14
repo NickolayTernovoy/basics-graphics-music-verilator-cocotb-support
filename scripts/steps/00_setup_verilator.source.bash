@@ -22,7 +22,22 @@ then
 fi
 
 #-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
 
+verilator_setup ()
+{
+    if is_command_available verilator ; then
+        return  # Already set up
+    fi
+
+    alt_icarus_install_path="$HOME/install/verilator"
+
+    if [ -d "$alt_icarus_install_path" ]
+    then
+        export PATH="${PATH:+$PATH:}$alt_icarus_install_path/bin"
+        export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$alt_icarus_install_path/lib"
+    fi
+}
 #-----------------------------------------------------------------------------
 run_verilator ()
 {
@@ -44,17 +59,15 @@ run_verilator ()
     fi
 
 
-    # Include directory
-    INCLUDE_DIR=../common
     # Verilator flags
     BIN=Vtop
     VFLAGS="--trace-fst --cc --binary -Wno-style -Wno-fatal --compiler clang -o $BIN -O0"
 
-
     #For building
-    verilator $VFLAGS -I ..      -I "$lab_dir/common" \
-    ../*.sv    "$lab_dir/common"/*.sv \
-    --top-module tb \
+    verilator $VFLAGS \
+    +incdir+.. +incdir+"$lab_dir/common" \
+    ../*.sv "$lab_dir/common"/*.sv \
+             --top-module tb \
     |& tee "$log"
 
     # For simulation

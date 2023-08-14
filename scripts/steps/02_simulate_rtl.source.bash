@@ -3,5 +3,5 @@
 if [ -f $questa_script ] ; then
     run_questa
 else
-    run_icarus_verilog
+    run_verilator
 fi

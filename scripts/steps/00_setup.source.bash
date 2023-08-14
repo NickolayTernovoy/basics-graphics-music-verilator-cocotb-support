@@ -116,6 +116,7 @@ is_command_available_or_error_and_install ()
 #   Gowin IDE
 #   Open Lane
 #   Icarus Verilog
+#   Verilator
 #
 #-----------------------------------------------------------------------------
 
@@ -123,6 +124,7 @@ source "$script_dir/steps/00_setup_intel_fpga.source.bash"
 source "$script_dir/steps/00_setup_gowin.source.bash"
 source "$script_dir/steps/00_setup_open_lane.source.bash"
 source "$script_dir/steps/00_setup_icarus.source.bash"
+source "$script_dir/steps/00_setup_verilator.source.bash"
 
 #-----------------------------------------------------------------------------
 #
@@ -336,3 +338,4 @@ esac
 
 openlane_setup
 icarus_verilog_setup
+verilator_setup
